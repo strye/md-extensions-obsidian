@@ -68,6 +68,10 @@ export default class ExtensionManager extends Plugin {
 		// This adds a settings tab so the user can configure various aspects of the plugin
 		this.addSettingTab(new SampleSettingTab(this.app, this));
 
+		// Convert setting to array
+		// register the view and extensions
+		// this.registerExtensions(["mdx"], "markdown");
+
 		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
 		// Using this function will automatically remove the event listener when this plugin is disabled.
 		this.registerDomEvent(document, 'click', (evt: MouseEvent) => {
@@ -120,13 +124,13 @@ class SampleSettingTab extends PluginSettingTab {
 
 		containerEl.empty();
 
-		containerEl.createEl('h2', {text: 'Settings for my awesome plugin.'});
+		containerEl.createEl('h2', {text: 'Settings for managing extensions.'});
 
 		new Setting(containerEl)
-			.setName('Setting #1')
-			.setDesc('It\'s a secret')
+			.setName('File Extensions')
+			.setDesc('Comma delimited list of file extensions')
 			.addText(text => text
-				.setPlaceholder('Enter your secret')
+				.setPlaceholder('Enter your extensions')
 				.setValue(this.plugin.settings.extensions)
 				.onChange(async (value) => {
 					console.log('Secret: ' + value);
