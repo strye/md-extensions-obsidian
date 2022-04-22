@@ -1,6 +1,9 @@
-## Obsidian Sample Plugin
+## Obsidian File Extension Plugin
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+This is a plugin for Obsidian (https://obsidian.md) that allows you to associate multiple file extentions to Obsidian so you can opened and edit them as markdown files.
+
+
+If you are a developer looking for examples, this was built from the offical "Ob
 
 This project uses Typescript to provide type checking and documentation.
 The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definition format, which contains TSDoc comments describing what it does.
